@@ -1,0 +1,34 @@
+---
+title: 1101s.wiki
+description: CS1101S Studio resources
+template: splash
+hero:
+  title: |
+    Welcome to CS1101S Studio 👋
+  image:
+    file: ../../assets/logo.png
+  actions:
+    - text: Studios
+      link: /studios/welcome/
+      icon: right-arrow
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+## Check out these other resources 📚
+
+<CardGrid stagger>
+ <Card title="Source Academy" icon="puzzle">
+  Head over to [Source Academy](https://sourceacademy.nus.edu.sg) to immerse yourself in the world of Source!
+ </Card>
+ <Card title="Source Docs" icon="document">
+  Check out the [documentations](https://docs.sourceacademy.org) for more information on the Source languages.
+ </Card>
+ <Card title="Ed Discussion" icon="open-book">
+  Join the [discussions](https://edstem.org/us/courses/42391/discussion/) to ask questions and interact with your peers.
+ </Card>
+ <Card title="Source Academy GitHub" icon="github">
+  Curious about how Source Academy works? Or want to report bugs? Check out [our GitHub](https://github.com/source-academy).
+ </Card>
+</CardGrid>

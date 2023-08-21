@@ -1,1 +1,1 @@
-# CS1101S-teach  [![Deploy](https://github.com/shenyih0ng/CS1101S-teach/actions/workflows/deploy.yml/badge.svg)](https://github.com/shenyih0ng/CS1101S-teach/actions/workflows/deploy.yml)
+# 1101s.wiki  [![Deploy](https://github.com/shenyih0ng/1101s-wiki/actions/workflows/deploy.yml/badge.svg)](https://github.com/shenyih0ng/1101s-wiki/actions/workflows/deploy.yml)
