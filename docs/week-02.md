@@ -1,17 +1,39 @@
 ---
 id: studio-2
-title: Studio 2
+title: Studio W2
 ---
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQuk-ev3Y1pzZ0IiBpUNi8QUcALDIBxz8_I-MnDvZ5-Ivg_Ugebyat3gfz1pr-m9jk4LmVqDZ4Wy0PR/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe 
+    src="https://docs.google.com/presentation/d/e/2PACX-1vTpNqzXMi7ysKYUfWOMpxoqZTwYqO4fLspD-X_Y5pyN9Lcohg1rirSeOgiUOkl75ywSyMaDsTfann2f/embed" 
+    frameborder="0" 
+    width="100%" 
+    height="569" 
+    allowfullscreen="true" 
+    mozallowfullscreen="true" 
+    webkitallowfullscreen="true">
+</iframe>
 
-> Link to slides: https://docs.google.com/presentation/d/1X1eiEvbCmr2At22cqISZ23zRGR9Iog9lAwQM8U-ufNI/edit?usp=sharing
+[Link to Slides](https://docs.google.com/presentation/d/1UoJAvRIVl-xECXhvcuJSUqlBaLIqapDoOtgNW2sRUpA/edit?usp=sharing)
 
-## Relevant SICP JS Sections
+## Studio Worksheets
 
-**`1.1.1` - `1.1.4` + `1.1.6`**
+1. [Studio 2 Worksheet](https://drive.google.com/file/d/1Yx8yEejibjX-9L9EEww3IMxg09Up4BAH/view?usp=drive_link)
 
-:::info
-SICP JS (Web) URL pattern: `https://sourceacademy.org/sicpjs/<section>`
-e.g. Section 1.1.1: https://sourceacademy.org/sicpjs/1.1.1
-:::
+## `x_combo` 
+
+Implement a function to get a **specific order** from the combo. Let's call this function `x_combo` where `x` refers to the position of a order **from the back** of a combo.
+
+1. `x` is one-indexed
+2. Assume that all inputs are valid - `x` will never be more than the number of digits in `combo`
+
+
+```javascript
+function x_order(order, x) {
+    // YOUR SOLUTION HERE 
+}
+
+// Examples
+x_order(1234, 1) // 4
+x_order(1234, 3) // 2
+x_order(12345678, 8) // 1
+```

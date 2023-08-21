@@ -11,9 +11,9 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "NUS AY22/23 CS1101S",
-  url: "https://yihongshen.me/",
-  baseUrl: "/CS1101S-teach/",
+  title: "NUS AY23/24 CS1101S",
+  url: "https://1101s.wiki/",
+  baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -33,7 +33,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: githubRepoLink + "/tree/main/",
           remarkPlugins: [math],
-          rehypePlugins: [katex]
+          rehypePlugins: [katex],
+          exclude: ["**/extras/**", "**/mastery-check/**", "week-[0][3-9].md", "week-1[0-3].md"]
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -54,18 +55,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "NUS AY22/23 CS1101S",
+        title: "NUS AY23/24 CS1101S",
         logo: {
           alt: "lambda",
           src: "img/logo.svg",
         },
         items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Studios",
-          },
           {
             href: githubRepoLink,
             label: "GitHub",
@@ -74,17 +69,7 @@ const config = {
         ],
       },
       footer: {
-        style: "light",
         links: [
-          {
-            title: "Materials",
-            items: [
-              {
-                label: "Studios",
-                to: "/docs/intro",
-              },
-            ],
-          },
           {
             title: "Source Academy / SICP",
             items: [
@@ -97,7 +82,7 @@ const config = {
                 href: "https://sourceacademy.nus.edu.sg/",
               },
               {
-                label: "Source Academy Repo",
+                label: "Source Academy Repositories",
                 href: "https://github.com/source-academy/",
               },
             ],
@@ -107,16 +92,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      algolia: {
-        appId: "008E4V7PT1",
-        apiKey: "7a96feff40028a03558c98d7f9c51222",
-        indexName: "cs1101s-teach",
-        contextualSearch: true,
-        externalUrlRegex: "external\\.com|domain\\.com",
-        searchParameters: {},
-        searchPagePath: "search",
-      },
+      }
     }),
 };
 
