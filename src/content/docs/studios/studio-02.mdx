@@ -35,3 +35,21 @@ x_order(1234, 1) // 4
 x_order(1234, 3) // 2
 x_order(12345678, 8) // 1
 ```
+
+<details>
+<summary>Answers</summary>
+
+1. Recognize that everytime we do a `/ 10`, we shift the order to the right by `1`, therefore, to get to the `x` position, we can do `order / 10^(x-1)`
+2. Make use of the already implemented `last_combo`
+
+```javascript
+function last_combo(order) {
+    // Question 7 in Studio 2 Worksheet
+    return order % 10;
+}
+
+function x_order(order, x) {
+    return last_combo(math_floor(order / math_pow(10, x-1)));
+}
+```
+</details>
