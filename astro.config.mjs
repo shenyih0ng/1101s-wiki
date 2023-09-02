@@ -2,9 +2,16 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
 
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.1101s.wiki',
+	markdown: {
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeKatex]
+	},
 	integrations: [
 		starlight({
 			title: '1101s.wiki',
@@ -21,12 +28,25 @@ export default defineConfig({
 					label: 'Studios',
 					autogenerate: { directory: 'studios' },
 				},
+				{
+					label: 'Extras',
+					autogenerate: { directory: 'extras' },
+				},
 			],
 			customCss: [
 				'./src/styles/tailwind.css',
 				'@fontsource/inter',
 				'@fontsource/ibm-plex-mono',
 			],
+			head: [
+				{
+					tag: 'link',
+					attrs: {
+						rel: "stylesheet",
+						href: "https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+					}
+				}
+			]
 		}),
 		tailwind({ applyBaseStyles: false }),
 	],

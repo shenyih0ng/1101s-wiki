@@ -1,10 +1,9 @@
 ---
-id: orders-of-growth
 title: Orders of Growth
 ---
 
 :::caution
-We will only be focusing on **run time** complexity below
+We will only be focusing on **run time** complexity
 :::
 
 ## What exactly is Big O/Ω/Θ 🤔
@@ -36,7 +35,7 @@ The wiki page https://en.wikipedia.org/wiki/Big_O_notation is good too!
 
 To put it simply, Big O represents a upper bound of the order of growth/time complexity of a function.
 
-**Suppose $f(x)$ represents the function/algorithm, then when we say that $f(x)$ has a Big O of $x^2$, it can be represented as $f(x) = O(x^2)$.** Further translating this into english, it would mean that the growth of the run time of $f(x)$ is proportional to _something_ (can't find a good word) much slower growing than $x^2$.
+**Suppose $f(x)$ represents the function/algorithm and we say that $f(x)$ has a Big O of $x^2$, then it can be said that $f(x) = O(x^2)$.**. This means that the growth of the run time of $f(x)$ is proportional to _something_ (can't find a good word) much slower growing than $x^2$.
 
 > The (incomplete) math equivalent: $f(x) < k(x^2)$ where $k$ is a constant
 
@@ -72,7 +71,7 @@ After looking at the upper and lower bound, Big Θ focuses on the "tight" bound.
 
 > Note that the $g(x)$ on both sides represents the same comparison function
 
-**Therefore, if $f(x) \leq k_2(x^2)$ and $k_1(x) \leq f(x)$, then it is unclear as to what the Big Θ of $f(x)$ really is*!** On the other hand, if we have $f(x) \leq k_2(x)$ and $k_1(x) \leq f(x)$, then we can say that $f(x) = Θ(x)$.
+**Therefore, if $f(x) \leq k_2(x^2)$ and $k_1(x) \leq f(x)$, then it is unclear as to what the Big Θ of $f(x)$ really is!** On the other hand, if we have $f(x) \leq k_2(x)$ and $k_1(x) \leq f(x)$, then we can say that $f(x) = Θ(x)$.
 
 ## Recurrence Relations
 
@@ -113,37 +112,6 @@ $$
 
 Therefore, we can conclude that time complexity of `length` is $Θ(n)$.
 
-#### Tower of Hanoi 🗼
-
-```javascript
-function tower_of_hanoi (n, src, tar, aux) {
-    return n === 0
-            ? 0
-            : n === 1
-            ? 1
-            : tower_of_hanoi(n-1, src, aux, tar) + 
-              1 + 
-              tower_of_hanoi(n-1, aux, tar, src);
-}
-```
-
-> More details [here](/studio-4#tower-of-hanoi-)
-
-Representing it in recurrence relation,
-
-$T(n) = 1 + T(n-1) + T(n-1)$ where $n$ is the number of the rods
-
-Expanding it,
-
-$$
-T(n) = 1 + T(n-1) + T(n-1)\\
-T(n) = 1 + (1 + T(n-2) + T(n-2)) + (1 + T(n-2) + T(n-2))\\
-\vdots\\
-T(n) = 2^n
-$$
-
-Therefore, we can conclude that time complexity of `tower_of_hanoi` is $Θ(2^n)$.
-
-:::info
+:::note
 These are very trivial and well defined functions, it is merely used as simple examples. Do practice using recurrence relations when solving PYP papers, there are better questions in there!
 :::
