@@ -34,6 +34,20 @@ vert_fractal(heart, 1);
 vert_fractal(heart, 5);
 ```
 
+<details>
+<summary>Answers</summary>
+
+This is approach is similar to the `fractal` function seen in the _Rune Reading_ mission! Instead of going left to right, here we are doing it bottom up.
+
+```javascript
+function vert_fractal {
+    return n === 1 
+            ? rune 
+            : stack(vert_fractal(n-1, beside(rune, rune)), rune);
+}
+```
+</details>
+
 ### `corner_fractal`
 
 Refer to **slide 23** for examples of what this function should do.
@@ -47,6 +61,22 @@ function corner_fractal(rune, n) {
 corner_fractal(heart, 1);
 corner_fractal(heart, 5);
 ```
+
+<details>
+<summary>Answers</summary>
+
+Notice how we can reuse both the `fractal` and `vert_fractal` functions to create this new function!
+
+```javascript
+function corner_fractal {
+    return n === 1 
+             ? rune
+             : beside(vert_fractal(n, rune),
+                      stack(corner_fractal(n - 1, rune), 
+                            fractal(n - 1, stack(rune, rune))));
+}
+```
+</details>
 
 ## Wishful Thinking ✨ and Recursion 🔁 
 
