@@ -15,7 +15,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '1101s.wiki',
-			favicon: './public/favicon.ico',
+      favicon:'/public/favicon.ico',
 			logo: {
 				src: './src/assets/logo.png',
 				replacesTitle: true
