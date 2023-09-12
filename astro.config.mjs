@@ -29,9 +29,13 @@ export default defineConfig({
 					autogenerate: { directory: 'studios' },
 				},
 				{
+					label: 'Mastery Check',
+					autogenerate: { directory: 'mastery-check' },
+				},
+				{
 					label: 'Extras',
 					autogenerate: { directory: 'extras' },
-				},
+				}
 			],
 			customCss: [
 				'./src/styles/tailwind.css',
