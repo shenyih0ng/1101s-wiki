@@ -1,0 +1,46 @@
+---
+title: Studio 5
+---
+
+<iframe 
+    src="https://docs.google.com/presentation/d/e/2PACX-1vQDHN_Ioc486ssiRJI7av0HYkOScQEPMandErGw0TJLPPg7cQSZdW3nP1a5nI74Np3cvI6VohPkLvD4/embed" 
+    class="aspect-video w-full"
+    frameborder="0" 
+    allowfullscreen="true" 
+    mozallowfullscreen="true" 
+    webkitallowfullscreen="true">
+</iframe>
+
+## Studio Worksheets
+
+1. [Studio 5 Worksheet](https://drive.google.com/file/d/10TSl6yGk93qAjrLmJ2lTG8wV4UP_gZf4/view?usp=sharing)
+2. [Studio 5 In-class Worksheet](https://drive.google.com/file/d/1-u90FYv_aGRstWnLKWTPTCXkunIS_0IU/view?usp=sharing)
+
+## Creating our own `list`
+
+Implement the function `my_list` that takes in `len` and `start` and returns a list of length `len` that starts at `start` and increments by 1.
+
+```js
+function my_list(len, start) {
+    // YOUR SOLUTION HERE
+}
+
+// Examples
+my_list(3, 0) // list(0, 1, 2)
+my_list(0, 5) // null
+```
+:::caution
+You are only allowed to use `pair` and not other `list` functions.
+:::
+
+<details>
+<summary>Answer</summary>
+
+```javascript
+function my_list(len, start) {
+    return len <= 0 
+            ? null 
+            : pair(start, my_list(len - 1, start + 1));
+}
+```
+</details>
